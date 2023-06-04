@@ -1,9 +1,10 @@
 :root {
-  --bg: #e0e1e1;
-  --dark: #bebebe;
-  --light: #ffffff;
+  --bg: #edf1f4;
+  --dark: rgba(0, 0, 0, 0.1);
+  --light: #fffb;
   --text-dark: #001e3e;
   --text-light: #2c445f;
+  --logo: #252f40;
 }
 
 * {
@@ -29,7 +30,70 @@ main {
 #root {
   height: 50rem;
   width: 50rem;
-  border-radius: 8rem;
+  border-radius: 2rem;
   border-bottom: 0.1rem solid var(--light);
-  box-shadow: 5rem 5rem 15rem var(--dark), -5rem -5rem 15rem var(--light);
+  box-shadow: 1.5rem 1.5rem 2rem var(--dark), -1.5rem -1.5rem 2rem var(--light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5rem 6rem;
+}
+
+#root .icon {
+  position: relative;
+  height: 14rem;
+  width: 14rem;
+  border-radius: 50%;
+  box-shadow: 1.5rem 1.5rem 2rem var(--dark), -1.5rem -1.5rem 2rem var(--light);
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  justify-content: center;
+}
+
+#root .icon::before {
+  content: "";
+  position: absolute;
+  height: 10rem;
+  width: 10rem;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  box-shadow: inset 5px 5px 10px var(--dark), inset -5px -5px 10px var(--light);
+}
+
+#root .icon i {
+  font-size: 5rem;
+}
+
+#root .inputContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+#root .inputContainer input {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 2rem;
+  border-radius: 1rem;
+  font-size: 2rem;
+}
+
+#root .inputContainer input[type="text"] {
+  box-shadow: inset 5px 5px 10px var(--dark), inset -5px -5px 10px var(--light);
+  text-align: center;
+}
+
+#root .inputContainer input[type="submit"] {
+  box-shadow: 5px 5px 10px var(--dark), -5px -5px 10px var(--light);
+}
+
+#root .inputContainer input[type="submit"]:focus {
+  box-shadow: inset 5px 5px 10px var(--dark), inset -5px -5px 10px var(--light);
 }
